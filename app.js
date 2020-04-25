@@ -1,6 +1,7 @@
 // console.log('starting')
 
 const request = require("request")
+const geocode = require('./utilis/geocode')
 
 // setTimeout( ()=>{
 //     console.log('3 secound time')
@@ -30,21 +31,27 @@ console.log('finishing')
     
 // } )
 
-const geocodeURL='https://api.mapbox.com/geocoding/v5/mapbox.places/chester.json?proximity=-74.70850,40.78375&access_token=pk.eyJ1IjoicmpqYXNzaSIsImEiOiJjazlkd3hiMnUwN250M2xtbGh0OGx5dm1oIn0.uXnaUmVeGTSL-nwZa_ToNg&limit=1'
-request({ url:geocodeURL, json: true},(error,response)=> {
-    if(error)
-    {
-        console.log('unable to connect')
-    }
-    else if (response.body.features.length===0)
-    {
-        console.log('unable to find location service try another')
-    }
-    else{
-        const latitude =response.body.features[0].center[0]
-const logtitude =response.body.features[0].center[1]
-console.log(latitude,logtitude)
-    }
+// const geocodeURL='https://api.mapbox.com/geocoding/v5/mapbox.places/chester.json?proximity=-74.70850,40.78375&access_token=pk.eyJ1IjoicmpqYXNzaSIsImEiOiJjazlkd3hiMnUwN250M2xtbGh0OGx5dm1oIn0.uXnaUmVeGTSL-nwZa_ToNg&limit=1'
+// request({ url:geocodeURL, json: true},(error,response)=> {
+//     if(error)
+//     {
+//         console.log('unable to connect')
+//     }
+//     else if (response.body.features.length===0)
+//     {
+//         console.log('unable to find location service try another')
+//     }
+//     else{
+//         const latitude =response.body.features[0].center[0]
+// const logtitude =response.body.features[0].center[1]
+// console.log(latitude,logtitude)
+//     }
 
-}
-)
+// }
+// )
+
+geocode('boston',(error ,data)=>
+{
+ console.log('Error',error)
+ console.log('Data',data)
+})
