@@ -7,5 +7,17 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahul-jassi/weather-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rahul-jassi/weather-app/issues"
+  },
+  "homepage": "https://github.com/Rahul-jassi/weather-app#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
